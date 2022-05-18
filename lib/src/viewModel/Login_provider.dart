@@ -16,6 +16,5 @@ class LoginProviderr extends ChangeNotifier{
     }
   }
 
-  clearField(){}
 
 }

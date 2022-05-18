@@ -20,16 +20,13 @@ class SampleProvider extends ChangeNotifier{
         final items = json.decode(response.body);
         print('items'+items.toString());
         (items as List).map((li) => sampleList.add(Sample.fromJson(li))).toList();
-        // (items as List<Map<String,dynamic>>).forEach((element) {
-        //   sampleList.add(Sample.fromJson(element));
-        // });
         print('success');
         status=Status.LOADED;
         notifyListeners();
       } else {
         status=Status.ERROR;
         notifyListeners();
-        throw Exception('Failed to load album');
+        throw Exception('Failed to load data');
       }
     }catch(e){
       print('error is'+e.toString());
